@@ -1,0 +1,32 @@
+digraph {
+    ratio=0.5;
+    node [
+      shape="plaintext"
+      border="0"
+    ];
+    edge [
+      arrowsize="0.5"
+      penwidth="0.5"
+    ];
+    client [label="client"];
+    client_c [label="client.c"];
+    client_o [label="client.o"];
+    common_c [label="common.c"];
+    common_o [label="common.o"];
+    common_h [label="common.h"];
+    libcommon_a [label="libcommon.a"];
+    server [label="server"];
+    server_c [label="server.c"];
+    server_o [label="server.o"];
+    client_c -> client_o [color="#a0a0a0"];
+    client_o -> client [color="#a0a0a0"];
+    common_c -> common_o [color="#a0a0a0"];
+    common_h -> client_c [color="#a0a0a0"];
+    common_h -> common_c [color="#a0a0a0"];
+    common_h -> server_c [color="#a0a0a0"];
+    common_o -> libcommon_a [color="#a0a0a0"];
+    libcommon_a -> client [color="#a0a0a0"];
+    libcommon_a -> server [color="#a0a0a0"];
+    server_c -> server_o [color="#a0a0a0"];
+    server_o -> server [color="#a0a0a0"];
+}
